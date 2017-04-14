@@ -1,0 +1,22 @@
+<div class="panel-body">
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>Название книги:</label>
+            <input class="form-control" ng-model="currentBk.name"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>Жанр:</label>
+            <input class="form-control" ng-model="currentBk.janre"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>Количество страниц:</label>
+            <input class="form-control" ng-model="currentBk.quant"/>
+        </div>
+    </div>
+    <button class="btn btn-primary" ng-click="saveEditBook(currentBk)">сохранить изменения</button>
+    <button class="btn btn-primary " ng-click="cancelEditBook(currentBk)">отмена</button>
+</div>

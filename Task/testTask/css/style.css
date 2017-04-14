@@ -1,0 +1,17 @@
+
+form .ng-invalid-required.ng-dirty {
+    background-color: lightpink;
+}
+
+form .ng-valid.ng-dirty {
+    background-color: lightgreen;
+}
+form .ng-invalid-pattern{
+    font-weight: bold;
+    background-color: lightpink;
+}
+
+div.error {
+    color: red;
+    font-weight: bold;
+}

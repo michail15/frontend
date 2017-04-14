@@ -1,0 +1,31 @@
+<div class="panel-body ">
+    <div class="form-group">
+        <table class="table  table-striped">
+            <thead>
+            <tr>
+                <th>Название книги</th>
+                <th class="text-right">Жанр книги</th>
+                <th class="text-right">Количество страниц</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr ng-repeat="item in booksOfautor">
+                <td><h4>{{item.name}}</h4></td>
+                <td class="text-right"><h4>{{item.janre}}</h4></td>
+                <td class="text-right"><h4>{{item.quant}}</h4></td>
+                <td class="text-right">
+                    <button class="btn btn-xs btn-primary" ng-click="deleteBook(item)">удалить книгу</button>
+                </td>
+                <td>
+                    <button class="btn btn-xs  btn-primary" ng-click="editBooks(item)">редактировать</button>
+                </td>
+            </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+    <button class="btn  btn-primary" ng-click="toTb()">на главную</button>
+</div>
