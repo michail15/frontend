@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form .ng-invalid-required.ng-dirty {
+            background-color: lightpink;
+        }
+
+        form .ng-valid.ng-dirty {
+            background-color: lightgreen;
+        }
+
+
+        div.error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="padding:10px" ng-controller="defaultCtrl">
+
+<form novalidate name="myForm" ng-submit="saveEdit(currentAutor)">
+    <div class="row" >
+
+        <div class="col-md-4">
+            <div class="well">
+
+                <div class="form-group row">
+                    <label for="firstName">Фамилия</label>
+                    <input id="firstName"  name="firstName"class="form-control"  required ng-model="currentAutor.firstName" />
+                    <div class="error" ng-show="myForm.firstName.$invalid && myForm.firstName.$dirty">
+                        {{getError(myForm.firstName.$error)}}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="lastName">Имя</label>
+                    <input id="lastName" name="lastName" class="form-control"  required  ng-model="currentAutor.lastName" />
+                    <div class="error" ng-show="myForm.lastName.$invalid && myForm.lastName.$dirty">
+                        {{getError(myForm.lastName.$error)}}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="patronymic">Отчество</label>
+                    <input id="patronymic" name="patronymic" class="form-control"  required  ng-model="currentAutor.patronymic" />
+                    <div class="error" ng-show="myForm.patronymic.$invalid && myForm.patronymic.$dirty">
+                        {{getError(myForm.patronymic.$error)}}
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="dateOfbr">Дата рождения</label>
+                    <input type="date" id="dateOfbr" name="dateOfbr" class="form-control"  required ng-model="currentAutor.dateOfbr"/>
+
+                </div>
+
+                <button class="btn btn-primary btn-block" ng-disabled="myForm.$invalid">сохранить</button>
+                <button class="btn btn-primary btn-block"  ng-disabled="myForm.$invalid" ng-click="cancelEdit(currentAutor)" >отмена</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>

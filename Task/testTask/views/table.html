@@ -1,0 +1,55 @@
+<div class="panel-body">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>фамилия</th>
+            <th class="text-right">имя</th>
+            <th class="text-right">отчество</th>
+            <th class="text-right">дата рождения</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in autors">
+            <td>{{item.firstName}}</td>
+            <td class="text-right">{{item.lastName}}</td>
+            <td class="text-right">{{item.patronymic}}</td>
+            <td class="text-right"> {{getDt(item.dateOfbr) | date : "dd MM yyyy"}}</td>
+
+            <td class="text-right"><button class="btn btn-xs btn-info"  ng-click="showBk(item)">список книг</button> </td>
+            <td class="text-right"> <button class="btn btn-xs btn-info"  ng-click="crBk(item)">добавить книгу</button></td>
+            <td class="text-center">
+                <button class="btn btn-xs btn-primary" ng-click="delete(item)">удалить</button>
+                <button class="btn btn-xs btn-primary" ng-click="editOrCreate(item)">редактировать</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-primary" ng-click="refresh()">обновить</button>
+        <button class="btn btn-primary" ng-click="editOrCreate()">добавить автора</button>
+    </div>
+
+
+    <!--<table class="table table-striped">-->
+        <!--<thead>-->
+        <!--<tr>-->
+
+            <!--<th class="text-right">название</th>-->
+            <!--<th class="text-right">жанр</th>-->
+
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr ng-repeat="item in books">-->
+            <!--<td>{{item.name}}</td>-->
+            <!--<td class="text-right">{{item.janre}}</td>-->
+
+            <!--<td class="text-right"><button class="btn btn-xs btn-info"  ng-click="showBk(item)">список книг</button> </td>-->
+            <!--<td class="text-center">-->
+                <!--<button class="btn btn-xs btn-primary" ng-click="delete(item)">удалить</button>-->
+                <!--<button class="btn btn-xs btn-primary" ng-click="editOrCreate(item)">редактировать</button>-->
+            <!--</td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    <!--</table>-->
+</div>
